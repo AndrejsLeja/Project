@@ -1,4 +1,9 @@
 from faker import Faker
+import openpyxl
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+import time
 
 fake = Faker()
 
@@ -13,3 +18,18 @@ names = [fake.name() for _ in range(100)]
 for i, name in enumerate(names, start=2):
     sheet[f'A{i}'] = name
     #print(name)
+
+service = Service()
+option = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=option)
+
+url = "https://morsedecoder.com/"
+driver.get(url)
+time.sleep(2)
+
+find = driver.find_element(By.ID, "accept-choices")
+find.click()
+
+input()
+
+workbook.save('names.xlsx')
