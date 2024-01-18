@@ -9,3 +9,11 @@ Openpyxl Bibliotēku izmantošu arī darbam ar Excel failiem. Šajā projektā �
 
 
 Tiks izmantota arī selenium bibliotēka lai atvērtu vietni https://morsedecoder.com/, izmantojot pārlūku Chrome. Izmantojot .selēnu. Es varu atrast pogu Accept all & visit the site. Atrodiet vietu, kur es varu ievietot nosaukumus no faila names un pēc tam atrodiet vārdus, kas pārveidoti par Morzes kodu.
+
+
+Kods strāda tā:
+
+
+Pirmkart importejam visas vajadzigas Selenium,Openpyxl un Faker. Veidojas workbooks(excel fails) kura pirma rinda, pirma un otra kolonna ir tie nosaukumi "Name" un "Morse Codet name".Pec tam veido 100 random vārdus kollona A.
+Pēc tam atveras vietne https://morsedecoder.com/ kura parveidos veidotus random vārdus morzes koda.Un Pēc tam ievieto morzes koda vārdus kollonā B un saglaba šo visu faila (names.xlsl). Fails names bus veidots vienu reiz bet 
+pec katras koda izmontošanas bus veidoti citi random vārdi un tie morzes kodi.
