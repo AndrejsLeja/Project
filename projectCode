@@ -30,6 +30,16 @@ time.sleep(2)
 find = driver.find_element(By.ID, "accept-choices")
 find.click()
 
-input()
+for row in range(2, len(names) + 2):
+    find = driver.find_element(By.ID, "input")
+    find.clear()
+    find.send_keys(sheet[f'A{row}'].value)
+    #time.sleep(2)
+    find = driver.find_element(By.ID, "output")
+    codetName = find.get_attribute("value")
+    sheet[f'B{row}'] = codetName
+
+    workbook.save('names.xlsx')
 
 workbook.save('names.xlsx')
+driver.quit()
